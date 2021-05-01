@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "./Dashboard.css"
 
+// LocalStorage
+import useLocalStorage
+ from '../../utilities/useLocalStorage'
+
 // Components
 import SideNav from '../../components/nav/Nav'
 import JobCard from '../../components/job-card/JobCard'
 
 function Dashboard() {
-
+    const [jobData, setJobData] = useLocalStorage('jobs', [])
     const jobs = [
         {
             id:1,
@@ -45,7 +49,6 @@ function Dashboard() {
                     <div className="jobHeading">
                             <h1 className="md40white jobheadtext">Job Openings</h1>
                            <div className="row">
-                                    
                                 {jobs.map((item)=> {
                                     return(
                                         <div className="JobCards col col-lg-3 col-md-6 col-sm-12">

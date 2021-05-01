@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import './CreateJob.css'
 import { useHistory } from "react-router-dom";
 import { Multiselect } from 'multiselect-react-dropdown';
 
+// LocalStorage
+import useLocalStorage
+ from '../../utilities/useLocalStorage'
+
 // Components
 import SideNav from '../../components/nav/Nav'
-
 
 function CreateJob() {
     const history = useHistory();
@@ -40,13 +43,19 @@ function CreateJob() {
     const [tech, settech] = useState([])
     const [jobname, setjobname] = useState('')
     const [jobdescription, setjobdescription] = useState('')
-
-
+    // const [jobdescription, setjobdescription] = useState('')
+    const [jobData, setJobData] = useLocalStorage('jobs', [])
+ 
     const onSelect = (options) => {
         settech(options)
     }
     const onRemove = (options) => {
         settech(options)
+    }
+    const handleSubmit = () => {
+        setJobData([...jobData, {tech, jobname, jobdescription
+        , tech}])
+        history.push("/");
     }
     
     return(
@@ -107,7 +116,8 @@ function CreateJob() {
                             class="btn btn-primary" 
                             type="button"
                             onClick={()=>{
-                                history.push("/");
+                                // history.push("/");
+                                handleSubmit()
                             }}
                             >Button</Button>
                         </div>

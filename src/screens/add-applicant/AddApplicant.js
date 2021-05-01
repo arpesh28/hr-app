@@ -7,9 +7,14 @@ import { Multiselect } from 'multiselect-react-dropdown';
 // Components
 import SideNav from '../../components/nav/Nav'
 
+// LocalStorage
+import useLocalStorage
+ from '../../utilities/useLocalStorage'
+
 
 function AddApplicant() {
     const history = useHistory();
+    
     const data = [
         {
             id: 1,
@@ -43,12 +48,17 @@ function AddApplicant() {
     const [noticePeriod, setnoticePeriod] = useState('')
     const [salary, setsalary] = useState('')
     const [jobcode, setjobcode] = useState('')
+    const [applicantData, setapplicantData] = useLocalStorage('applicants', [])
 
     const onSelect = (options) => {
         settech(options)
     }
     const onRemove = (options) => {
         settech(options)
+    }
+    const handleSubmit = () => {
+        setapplicantData([...applicantData, {name, notes,  salary, jobcode, noticePeriod, tech }])
+        history.push("/");
     }
 
     return(
@@ -151,7 +161,7 @@ function AddApplicant() {
                               class="btn btn-primary" 
                               type="button"
                               onClick={()=>{
-                                  history.push("/");
+                                 handleSubmit()
                               }}
                               >Button</Button>
                           </div>
