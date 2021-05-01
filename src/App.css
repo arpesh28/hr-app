@@ -106,3 +106,14 @@
 .form-control:focus {
   box-shadow: none!important;
 }
+.modal-content{
+  background-color: var(--greybg)!important;
+  padding: 30px!important;
+
+}
+.close {
+  color: #fff!important;
+}
+.modal-header {
+  border-bottom: 1px solid #1c1d23!important;
+}

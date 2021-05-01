@@ -1,0 +1,46 @@
+.searchInputContainer{
+    /* width: 10rem; */
+    display: flex;
+    
+}
+
+/* .form-control {
+    width: 30rem!important;
+    border: 1px solid #585963!important;
+    border-radius: 999px!important;
+    padding-left: 2rem;
+} */
+/* .searchIcon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+   margin-top: 20px;
+   margin-left: 25px;
+} */
+
+.searchInputWrapper{
+    display: flex;
+    align-items: baseline!important;
+}
+.searchBtn{
+    margin-left: 30px;
+    width: 10rem;
+    height:3rem;
+}
+.filterContainer{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.filterbadge{
+    margin-left: 30px;
+    background-color: #565969;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+.filterbadgeactive{
+    background-color: #694bc7;
+}
