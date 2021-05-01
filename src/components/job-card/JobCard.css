@@ -1,0 +1,35 @@
+.jobCardContainer{
+    padding: 25px;
+    background-color: #1d1f27;
+    border-radius: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 12rem;
+    transition: 0.3s ease-in-out;
+}
+.jobCardContainer:hover{
+filter: brightness(130%);
+cursor: pointer;
+}
+.jobText{
+    display: flex;
+    flex-direction: column;
+}
+.techtagContainer{
+    margin-top: 20px;
+}
+.techtag{
+   padding: 5px 8px;
+    background-color: #092e2f;
+    margin: 3px;
+    border-radius: 74px;
+}
+.addcard{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.addcard img{
+    width: 80px;
+    height: 80px;
+}

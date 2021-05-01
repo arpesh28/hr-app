@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --black: #000000;
+  --white: #ffff;
+
+  /* Main Colors */
+  --blue: #5bd4ec;
+  --main: #694bc7;
+  --subtext: #565969;
+
+  /* Background Colors */
+  --greybg: #0f1013;
+  --darkbg: #0b0c0e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.themegreybg {
+  background-color: var(--greybg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.themeblackbg {
+  background-color: var(--darkbg);
+}
+.col, .row {
+  padding: 0!important;
+  margin: 0!important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+.custom-container{
+  height: 100vh;
+  overflow: auto;
+  padding-bottom: 40px;
+}
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 25px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.form-label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(103 105 115);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Text Styles */
+.md16White {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 16px;
+}
+.md40white{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  color: white;
+}
+.rg20grey{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(103 105 115);
+}
+.md30main{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--main);
+}
+.rg16subtxt{
+  font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--subtext)
+}
+.lt15white{
+  font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #09a5ab;
+}
+
+
+.multiselectstyle{
+  display: flex;
+  flex-direction: column;
+}
+.form-control{
+  background-color: var(--greybg)!important;
+  border-radius: 0px!important;
+  border-width: 0!important;
+  border-bottom-width: 1px!important;
+  border-color: #585963!important;
+  padding-bottom: 30px!important;
+  padding-top: 30px!important;
+  color: #a0a0a0!important;
+  font-family: 'Poppins', sans-serif!important;
+  font-weight: 500!important;
+  font-size:18px!important;
+}
+.form-control:focus {
+  box-shadow: none!important;
 }
