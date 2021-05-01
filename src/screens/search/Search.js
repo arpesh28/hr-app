@@ -10,6 +10,11 @@ import SideNav from '../../components/nav/Nav'
 import ApplicantItem from '../../components/applicant-item/ApplicantItem'
 import ApplicantModal from '../../components/applicant-modal/ApplicantModal'
 
+// LocalStorage
+import useLocalStorage
+ from '../../utilities/useLocalStorage'
+
+
 
 function Search() {
     const [search, setsearch] = useState('')
@@ -18,6 +23,9 @@ function Search() {
     const [filter2, setfilter2] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [applicant, setapplicant] = useState(null)
+    const [applicantData, setapplicantData] = useLocalStorage('applicants', [])
+
+    
     const handleSearch = () => {
         console.log("Search")
     }
