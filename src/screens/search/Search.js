@@ -72,13 +72,13 @@ function Search() {
     return(
         <div className="custom-container dashboardContainer themegreybg">
            <div className="row">
-                <div className="col col-sm-2 col-md-2" >
+           <div className="col col-xs col-md col-lg  col-xl-2 " >
                     <SideNav page='Search' />
                 </div>
 
-                <div className="col col-sm-2 col-md-10 ">
-                    <div className="jobHeading">
-                            <h1 className="md40white jobheadtext">Search Applicant</h1>
+                <div className="col-12 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-10 ">
+                    <div className="searchHeading">
+                            <h1 className="md40white jobheadtext">Search Applicants</h1>
                            <div className="row">
                            <Form className="searchInputWrapper">
                         <Form.Group class="mb-5 searchInputContainer ">
@@ -94,28 +94,20 @@ function Search() {
                          }}
                          />
                         </Form.Group>
-                        {/* <Form.Group>
-                        <Button 
-                        className="searchBtn"             
-                        onClick={()=>{
-                            handleSearch()
-                        }}
-                        >Search</Button>
-                        </Form.Group> */}
                     </Form>
 
                            </div>
-                           <div className="filterContainer">
-                               <span className="md16White">Filter by</span>
-                               <Form className="filterInputs">
-                                   <Row>
-                                       <Col className="filterInput"
+                           <div className="filterContainer row d-flex align-items-center justify-content-center flex-column">
+                               <span className="md16White col-12 col-lg-3 text-center  ">Filter by</span>
+                               <Form className="filterInputs ">
+                                   <Row className="d-flex align-items-center justify-content-center flex-column  col-12 row">
+                                       <Col  className="filterInput col-12 col-sm-12 col-xs-12  col-md-6 col-lg-5 "
  >
                                             <Form.Control
                                             onChange={(e)=> {setSalaryF(parseInt(e.target.value))}}
                                             placeholder="Salary in Lakhs (ex: 1.68)" />
                                        </Col>
-                                       <Col className="filterInput"  >
+                                       <Col className="filterInput col-12 col-sm-12 col-xs-12 col-md-6 col-lg-5"  >
                                             <Form.Control
                                             onChange={(e)=> {setNoticeF(parseInt(e.target.value))}}
                                             placeholder="Notice Period in days (ex: 30)" />

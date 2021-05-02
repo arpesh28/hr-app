@@ -12,12 +12,18 @@ function JobCard ({
     type,
     name,
     desc,
-    tech
+    tech,
+    item
 }) {
     const history = useHistory();
    
     return(
-        <div className="jobCardContainer">
+        <div className="jobCardContainer"  onClick={()=>{
+            history.push({
+                pathname: '/listapplicants',
+                state: { jobcode:item.jobcode, tech } 
+              });
+        }}>
             {type=='job'? 
             <div>
             <div className="jobText" >

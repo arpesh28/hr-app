@@ -46,13 +46,13 @@ function SideNav ({
         },
         // {
         //     id: 5,
-        //     name: "List Applicat",
+        //     name: "List Applicants",
         //     icon: list,
-        //     link: '/listapplicant'
+        //     link: '/listapplicants'
         // },
 
     ]
-
+    console.log("TOGGLE:", toggel)
     return(
         <div>
             <div className={toggel? 'toggler toggle1': 'toggler toggle2'} onClick={()=>setToggle(!toggel)}>

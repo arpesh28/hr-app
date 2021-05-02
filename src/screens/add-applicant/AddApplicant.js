@@ -49,7 +49,8 @@ function AddApplicant() {
     const [salary, setsalary] = useState('')
     const [jobcode, setjobcode] = useState('')
     const [applicantData, setapplicantData] = useLocalStorage('applicants', [])
-
+    const [jobData, setJobData] = useLocalStorage('jobs', [])
+    
     const onSelect = (options) => {
         settech(options)
     }
@@ -64,11 +65,10 @@ function AddApplicant() {
     return(
         <div className="custom-container dashboardContainer themegreybg">
         <div className="row sidenav">
-             <div className="col col-sm-2 col-md-2" >
+        <div className="col col-xs col-md col-lg  col-xl-2 " >
                  <SideNav page='Add Applicant' />
              </div>
-          <div className="container">
-              <div className="col col-sm-2 col-md-10  ">
+          <div className="col-12 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-10 custom-container2">
                       <div className="addHead">
                               <h1 className="md40white">Add Applicant</h1>
                               <p className="rg20grey">Enter Applicant's Details</p>
@@ -78,7 +78,7 @@ function AddApplicant() {
 
                       <Form.Group class="mb-3">
                           <Form.Label for="formGroupExampleInput" class="form-label">Job Code</Form.Label>
-                          <Form.Control
+                          {/* <Form.Control
                            type="text" 
                            class="form-control" 
                            id="formGroupExampleInput" 
@@ -87,7 +87,15 @@ function AddApplicant() {
                            onChange={(e)=>{
                                setjobcode(e.target.value)
                            }}
-                           />
+                           /> */}
+                            <Form.Control className="custom-select" as="select" custom>
+                               {jobData.map((item)=>{
+                                   return(
+                                      <option>{item.jobname} - {item.jobcode} </option>
+                                   )
+                               })}
+                               
+                            </Form.Control>
                           </Form.Group>
 
                           <Form.Group class="mb-3">
@@ -121,6 +129,7 @@ function AddApplicant() {
                           <Form.Group class="mb-3  multiselectstyle">
                           <Form.Label for="formGroupExampleInput2" class="form-label">Technologies</Form.Label>
                           <Multiselect
+                          className="custom-select"
                           options={options}
                           onSelect={onSelect}
                           onRemove={onRemove} 
@@ -167,7 +176,6 @@ function AddApplicant() {
                           </div>
                       </Form>
               </div>
-          </div>
              
         </div>
         

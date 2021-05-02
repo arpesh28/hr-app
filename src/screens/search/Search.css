@@ -1,22 +1,6 @@
 .searchInputContainer{
-    /* width: 10rem; */
     display: flex;
-    
 }
-
-/* .form-control {
-    width: 30rem!important;
-    border: 1px solid #585963!important;
-    border-radius: 999px!important;
-    padding-left: 2rem;
-} */
-/* .searchIcon{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-   margin-top: 20px;
-   margin-left: 25px;
-} */
 
 .searchInputWrapper{
     display: flex;
@@ -28,10 +12,7 @@
     height:3rem;
 }
 .filterContainer{
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+   margin:20px 5px 30px 5px!important;
 }
 .filterbadge{
     margin-left: 30px;
@@ -45,8 +26,21 @@
     background-color: #694bc7;
 }
 .filterInputs{
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 .filterInput {
     margin-left: 40px!important;
+}
+
+@media screen and (max-width: 1280px) {
+    .searchHeading {
+        margin-top: 30%;
+    }
+
+}
+@media screen and (max-width: 980px) {
+    .filterInput {
+        margin-left: 0px!important;
+    }
+
 }

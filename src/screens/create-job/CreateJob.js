@@ -62,11 +62,10 @@ function CreateJob() {
     return(
       <div className="custom-container dashboardContainer themegreybg">
       <div className="row">
-           <div className="col col-sm-2 col-md-2" >
+      <div className="col col-xs col-md col-lg  col-xl-2 " >
                <SideNav page='Create Job' />
            </div>
-        <div className="container">
-            <div className="col col-sm-2 col-md-10  ">
+        <div className="col-12 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-10 custom-container2">
                     <div className="headingContainer">
                             <h1 className="md40white">Create Job</h1>
                             <p className="rg20grey">Add Job Details</p>
@@ -123,7 +122,6 @@ function CreateJob() {
                             >Button</Button>
                         </div>
                     </Form>
-            </div>
         </div>
            
       </div>

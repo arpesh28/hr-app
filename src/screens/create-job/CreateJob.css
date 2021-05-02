@@ -2,3 +2,16 @@
     margin-top: 20%;
     margin-bottom: 40px;
 }
+.custom-container2{
+    padding: 0 5rem!important;
+}
+
+@media screen and (max-width: 820px) {
+    .custom-container2{
+        padding: 0 3rem!important;
+    }
+    .headingContainer{
+        margin-top: 30%;
+        margin-bottom: 40px;
+    }
+}
