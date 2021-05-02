@@ -1,7 +1,9 @@
 .searchInputContainer{
     display: flex;
 }
-
+.searchHeading {
+    margin: 10%
+}
 .searchInputWrapper{
     display: flex;
     align-items: baseline!important;

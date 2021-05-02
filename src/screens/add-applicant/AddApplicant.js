@@ -58,6 +58,7 @@ function AddApplicant() {
         settech(options)
     }
     const handleSubmit = () => {
+        console.log("JOB CODE:", jobcode)
         setapplicantData([...applicantData, {name, notes,  salary:Number(salary), jobcode, noticePeriod:Number(noticePeriod), tech }])
         history.push("/");
     }
@@ -88,10 +89,15 @@ function AddApplicant() {
                                setjobcode(e.target.value)
                            }}
                            /> */}
-                            <Form.Control className="custom-select" as="select" custom>
+                            <Form.Control className="custom-select" as="select" custom
+                            onChange={(e)=>setjobcode(e.target.value)
+                            
+                            }
+                            >
                                {jobData.map((item)=>{
                                    return(
-                                      <option>{item.jobname} - {item.jobcode} </option>
+                                      <option
+                                      >{item.jobcode} </option>
                                    )
                                })}
                                
