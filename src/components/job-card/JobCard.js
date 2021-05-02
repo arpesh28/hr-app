@@ -28,7 +28,7 @@ function JobCard ({
                 {tech.map((item)=> {
                     console.log(item)
                     return(
-                        <span className="techtag lt15white">{item}</span>
+                        <span className="techtag lt15white">{item.tech}</span>
                     )
                 })}
             </div>

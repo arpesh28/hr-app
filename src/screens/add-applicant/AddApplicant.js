@@ -57,7 +57,7 @@ function AddApplicant() {
         settech(options)
     }
     const handleSubmit = () => {
-        setapplicantData([...applicantData, {name, notes,  salary, jobcode, noticePeriod, tech }])
+        setapplicantData([...applicantData, {name, notes,  salary:Number(salary), jobcode, noticePeriod:Number(noticePeriod), tech }])
         history.push("/");
     }
 

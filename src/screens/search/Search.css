@@ -44,3 +44,9 @@
 .filterbadgeactive{
     background-color: #694bc7;
 }
+.filterInputs{
+    margin-left: 20px;
+}
+.filterInput {
+    margin-left: 40px!important;
+}

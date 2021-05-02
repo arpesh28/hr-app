@@ -53,8 +53,9 @@ function CreateJob() {
         settech(options)
     }
     const handleSubmit = () => {
+        const jobcode = jobname.slice(0,2).toUpperCase() + Math.random().toString(28).substr(2,3);
         setJobData([...jobData, {tech, jobname, jobdescription
-        , tech}])
+        , tech, jobcode}])
         history.push("/");
     }
     

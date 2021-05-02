@@ -16,7 +16,7 @@ function ApplicantModal ({
     salary,
     notice,
 }) {
-    const history = useHistory();
+    // const history = useHistory();
     return(
         <Modal
         onHide={()=> {setShowModal(false)}}
@@ -43,7 +43,7 @@ function ApplicantModal ({
         </h4>
         {tech.map((item)=>{
                   return(
-                      <span className="techtag lt15white">{item}</span>
+                      <span className="techtag lt15white">{item.tech}</span>
                   )
               })}
         

@@ -20,7 +20,7 @@ function ApplicantItem ({
     setShowModal,
     showModal,
     item,
-    setapplicant
+    setapplicant,
 }) {
     const history = useHistory();
    
@@ -39,7 +39,7 @@ function ApplicantItem ({
           <div className=" itemcolumns d-flex align-items-center">
               {tech.map((item)=>{
                   return(
-                      <span className="techtag lt15white">{item}</span>
+                      <span className="techtag lt15white">{item.tech}</span>
                   )
               })}
           </div>

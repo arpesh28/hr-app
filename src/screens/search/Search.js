@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Form, Button, Modal } from "react-bootstrap";
+import { Container, Form, Button, Modal, Row, Col } from "react-bootstrap";
 import './Search.css'
 
 // Images
@@ -21,13 +21,25 @@ function Search() {
     // const [filter, setfilter] = useState('')
     const [filter1, setfilter1] = useState(false)
     const [filter2, setfilter2] = useState(false)
+    const [salaryF, setSalaryF] = useState(0)
+    const [noticeF, setNoticeF] = useState(0)
     const [showModal, setShowModal] = useState(false)
     const [applicant, setapplicant] = useState(null)
     const [applicantData, setapplicantData] = useLocalStorage('applicants', [])
+    const [visibleData, setVisibleData] = useState(null) || {}
 
-    
     const handleSearch = () => {
-        console.log("Search")
+        // applicantData.map((i)=>{
+        //     const {name, tech} = i;
+        //     console.log('i:',i)
+        //     if(search==name) {
+        //         setVisibleData([...visibleData, i])
+        //         console.log('i:',i)
+        //     } 
+        // })
+    }
+    const searchtype = () => {
+        // console.log(search)
     }
     const applicants = [
         {
@@ -55,6 +67,7 @@ function Search() {
             tech: ['React', 'Node', 'Flutter']
         },
     ]
+    console.log("ITEM:", salaryF, noticeF)
 
     return(
         <div className="custom-container dashboardContainer themegreybg">
@@ -81,44 +94,81 @@ function Search() {
                          }}
                          />
                         </Form.Group>
-                        <Form.Group>
+                        {/* <Form.Group>
                         <Button 
                         className="searchBtn"             
                         onClick={()=>{
                             handleSearch()
                         }}
                         >Search</Button>
-                        </Form.Group>
+                        </Form.Group> */}
                     </Form>
+
                            </div>
                            <div className="filterContainer">
                                <span className="md16White">Filter by</span>
-                               <div className={filter1? 'filterbadge md16White filterbadgeactive': 'filterbadge md16White'} onClick={()=>{
-                                   setfilter1(!filter1)
-                                   setfilter2(false)
-                                   }} > Notice Period</div>
-                               <div className={filter2? 'filterbadge md16White filterbadgeactive': 'filterbadge md16White'}  onClick={()=>{
-                                   setfilter2(!filter2)
-                                   setfilter1(false)
-                                   }}>Salary Asked</div>
+                               <Form className="filterInputs">
+                                   <Row>
+                                       <Col className="filterInput"
+ >
+                                            <Form.Control
+                                            onChange={(e)=> {setSalaryF(parseInt(e.target.value))}}
+                                            placeholder="Salary in Lakhs (ex: 1.68)" />
+                                       </Col>
+                                       <Col className="filterInput"  >
+                                            <Form.Control
+                                            onChange={(e)=> {setNoticeF(parseInt(e.target.value))}}
+                                            placeholder="Notice Period in days (ex: 30)" />
+                                       </Col>
+                                   </Row>
+                               </Form>
                            </div>
                     </div>
                    <div className="container">
-                        {applicants.map((item)=>{
+                        {
+                        
+
+                        applicantData&&applicantData
+                        .filter((val)=>{
+                            if (salaryF>0) {
+                                console.log(val.salary)
+                                if(val.salary <= salaryF) {
+                                    return val
+                                }
+                                else return 
+                            }
+                            else if (noticeF>0) {
+                                if(val.noticePeriod <= noticeF) {
+                                    return val
+                                }
+                                else return 
+                            }
+                            if(search=="") {
+                                return val
+                            } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
+                                return val
+                            } 
+                            else if (val.tech.find((t) => {
+                                if(t.tech.toLowerCase().includes(search.toLowerCase())) {
+                                    return true
+                                } else return false
+                            })) {return val}
+                            else {return}
+                        })
+                        .map((item, index)=>{
                             return(
-                                <>
+                                <div key={index}>
                                 <ApplicantItem 
-                                name={item.applicantName}
-                                code={item.jobCode}
+                                name={item.name}
+                                code={item.jobcode}
                                 salary={item.salary}
-                                notice={item.notice}
+                                notice={item.noticePeriod}
                                 tech={item.tech}
                                 setShowModal={setShowModal}
                                 item={item}
                                 setapplicant={setapplicant}
                                 />
-                                
-                                </>
+                                </div>
                             )
                         })}
                    </div>
@@ -126,11 +176,12 @@ function Search() {
                                     <ApplicantModal
                                     show={showModal}
                                     setShowModal={setShowModal}
-                                    name={applicant.applicantName}
-                                    code={applicant.jobCode}
+                                    name={applicant.name}
+                                    code={applicant.jobcode}
                                     salary={applicant.salary}
-                                    notice={applicant.notice}
+                                    notice={applicant.noticePeriod}
                                     tech={applicant.tech}
+                                    notes={applicant.notes}
                                 />}
                 </div>
            </div>
